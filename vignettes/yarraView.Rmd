@@ -25,8 +25,13 @@ The `yarraView` package provides tools to explore and visualize water quality da
 First, load the package:
 
 ```{r setup}
+# Load yarraView package
 library(yarraView)
-library(tidyverse)
+
+# Load other packages for data exploration
+library(dplyr)
+library(ggplot2)
+library(knitr)
 ```
 
 ## Interactive Dashboard

@@ -35,6 +35,13 @@ data(yarra_water)
 }
 
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-linhngo66/}
+}
+
+}
 \author{
 \strong{Maintainer}: Linh Ngo \email{tngo0043@student.monash.edu}
 
