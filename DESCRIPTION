@@ -1,19 +1,30 @@
 Package: yarraView
-Title: What the Package Does (One Line, Title Case)
+Title: Interactive Dashboard for Yarra River Water Quality Data
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Linh", "Ngo", , "tngo0043@student.monash.edu", role = c("aut", "cre"))
+Description: Provides water quality monitoring data from the Yarra River and 
+    an interactive Shiny dashboard for visualizing and analyzing water quality 
+    parameters over time. Users can explore time series trends, compare data 
+    between decades (1990s vs 2020s), and examine various water quality 
+    indicators including temperature, turbidity, salinity, and pH levels.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 Imports: 
+    bsicons,
+    bslib,
+    dplyr,
     ggbeeswarm,
+    ggplot2,
     plotly,
-    shiny,
-    shinydashboard,
-    tidyverse
+    scales,
+    shiny
 Depends: 
     R (>= 3.5)
 LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

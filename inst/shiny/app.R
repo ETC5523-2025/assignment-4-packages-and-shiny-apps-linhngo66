@@ -20,6 +20,8 @@ parameter_descriptions <- list(
 ui <- page_navbar(
   title = "Yarra Water Quality Dashboard",
   theme = bs_theme(version = 5, bootswatch = "flatly"),
+
+  tags$link(rel = "stylesheet", type = "text/css", href = "styles.css"),
   
   # Tab 1: Time Series
   nav_panel(
@@ -76,6 +78,12 @@ ui <- page_navbar(
           card_body(
             plotlyOutput("timeseries_plot", height = "100%")
           ),
+          card_footer(
+            tags$span(
+              "How to read: Each point represents a measurement; the pink line shows the trend over time.",
+              class = "plot-note"
+            )
+          ),
           full_screen = TRUE,
           height = "100%"
         ),
@@ -116,6 +124,12 @@ ui <- page_navbar(
           card_header("Period Comparison: 1990s vs 2020s"),
           card_body(
             plotlyOutput("comparison_plot", height = "100%")
+          ),
+          card_footer(
+            tags$span(
+              "How to read: Each dot represents an individual measurement by month. Colored lines connect the monthly medians for each period, allowing you to compare typical levels between the 1990s and 2020s.",
+              class = "plot-note"
+            )
           ),
           full_screen = TRUE,
           height = "100%"

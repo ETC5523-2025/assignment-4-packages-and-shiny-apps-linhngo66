@@ -1,0 +1,154 @@
+---
+title: "Exploring Changes in Water Quality in Yarra River"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Exploring Changes in Water Quality in Yarra River}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Introduction
+
+The Yarra River is one of Victoria's most iconic waterways, flowing through Melbourne and supporting diverse ecosystems and communities. Understanding changes in water quality over time is crucial for environmental management and conservation efforts.
+
+The `yarraView` package provides tools to explore and visualize water quality data from the Yarra River, including measurements of temperature, turbidity, salinity, and pH levels spanning from the 1990s to the 2020s.
+
+## Getting Started
+
+First, load the package:
+
+```{r setup}
+library(yarraView)
+library(tidyverse)
+```
+
+## Interactive Dashboard
+
+The easiest way to explore the water quality data is through the interactive Shiny dashboard. Launch it with:
+```{r, eval = FALSE}
+yarra_view()
+```
+
+The dashboard provides two main views:
+
+### Time Series Tab
+
+The Time Series tab allows you to:
+
+- **Filter by year**: Examine specific years (2020-2025) or view all years combined
+- **Select parameters**: Choose from Water Temperature, Turbidity, Salinity, or pH
+- **Interactive visualization**: Hover over data points to see exact measurements
+- **Summary statistics**: View average values and record counts at a glance
+
+This tab is ideal for identifying trends within the 2020s period and understanding seasonal patterns in water quality parameters.
+
+### Comparison Tab
+
+The Comparison tab enables you to:
+
+- **Compare decades**: Visualize differences between 1990s and 2020s measurements
+- **Identify long-term changes**: See how water quality has evolved over 30 years
+- **Seasonal patterns**: Examine monthly variations across different time periods
+- **Statistical summaries**: Hover over the data points to see median values for each month and period
+
+This tab helps answer questions like: "Has water temperature increased over the past three decades?" or "Are there differences in turbidity levels between the 1990s and 2020s?"
+
+
+## Accessing the Underlying Data
+
+The dashboard is built on the `yarra_water` dataset, which you can access directly for custom analysis:
+```{r}
+data(yarra_water)
+```
+
+### Data Structure
+
+Let's explore the structure of the dataset:
+```{r}
+glimpse(yarra_water)
+```
+
+The dataset contains **`r nrow(yarra_water)` observations** with the following key variables:
+
+- `site_id`: Unique identifier for monitoring sites
+- `name`: Location name of the monitoring site
+- `datetime`: Date and time of measurement
+- `parameter`: Water quality parameter measured
+- `value`: Measured value
+- `unit_of_measurement`: Unit of the measurement
+- `year`, `month`, `weekday`: Temporal components
+- `period`: Decade classification (1990s or 2020s)
+- `season`: Season when measurement was taken
+- `parameter_type`: Category of the parameter
+
+### Available Parameters
+```{r}
+yarra_water |> 
+  distinct(parameter, unit_of_measurement, parameter_type) |> 
+  arrange(parameter)
+```
+
+## Example Analysis
+
+### 1. Summary Statistics
+
+Calculate summary statistics for each parameter:
+```{r}
+yarra_water |>
+  filter(period == "2020s") |>
+  group_by(parameter, unit_of_measurement) |>
+  summarise(
+    n = n(),
+    min = min(value, na.rm = TRUE),
+    median = median(value, na.rm = TRUE),
+    mean = mean(value, na.rm = TRUE),
+    max = max(value, na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  knitr::kable(digits = 2, caption = "Water Quality Parameter Summary (2020s)")
+```
+
+### 2. Comparing Decades
+
+Compare median pH level between the 1990s and 2020s:
+```{r}
+yarra_water |> 
+  filter(
+    parameter == "pH",
+    value != 0) |> 
+  ggplot(aes(x = period, y = value, fill = period)) +
+  geom_violin(draw_quantiles = 0.5, alpha = 0.3) +
+  ggbeeswarm::geom_quasirandom(alpha = 0.3) +
+  labs(
+    x = NULL,
+    y = "pH",
+    title = "pH between periods",
+    fill = "Period", colour = "Period"
+  ) +
+  theme_bw() +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_text(size = 10),
+    panel.grid.minor = element_blank(),
+    strip.text = element_text(face = "bold"),
+    axis.text.x = element_text(angle = 0, vjust = 1),
+    axis.title.y = element_text(margin = margin(r = 6))
+  )
+```
+
+## Conclusion
+
+The `yarraView` package provides accessible tools for exploring Yarra River water quality data. Whether using the interactive dashboard for quick exploration or accessing the underlying data for detailed analysis, users can gain insights into how water quality has changed over time and identify patterns that inform environmental management decisions.
+
+## Further Resources
+
+- For more information about water quality parameters, see the parameter information boxes in the dashboard
+- To contribute to the package or report issues, visit the package repository
+- For questions about the data source or methodology, refer to the dataset documentation: `?yarra_water`
