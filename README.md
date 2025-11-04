@@ -86,4 +86,3 @@ MIT License
 ------------------------------------------------------------------------
 
 **pkgdown site:**
-<https://etc5523-2025.github.io/assignment-3-creating-a-blog-linhngo66/yarraView/>

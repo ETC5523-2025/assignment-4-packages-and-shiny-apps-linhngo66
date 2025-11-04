@@ -1,4 +1,4 @@
-url: https://etc5523-2025.github.io/assignment-3-creating-a-blog-linhngo66/yarraView/
+url: ~
 template:
   bootstrap: 5
   bootswatch: flatly
@@ -24,7 +24,7 @@ navbar:
       text: Articles
       menu:
       - text: Exploring Water Quality Changes
-        href: articles/render-dashboard.html
+        href: articles/yarraView.html
     github:
       icon: fab fa-github
       href: https://github.com/yourusername/yarraView

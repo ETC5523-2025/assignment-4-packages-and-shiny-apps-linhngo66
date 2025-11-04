@@ -20,7 +20,7 @@
 #'   \item{season}{Factor. Season when the sample was collected - 4 levels: Autumn, Winter, Spring, Summer}
 #'   \item{parameter_type}{Factor. Category of the parameter - 3 levels: Toxicant, Nutrient, Physical/Chemical Stressor}
 #' }
-#' @source Victorian Department of Energy, Environment, and Climate Action
+#' @source Victorian Department of Energy, Environment, and Climate Action \url{https://data.water.vic.gov.au/WMIS}
 #' @examples
 #' # Load the dataset
 #' data(yarra_water)

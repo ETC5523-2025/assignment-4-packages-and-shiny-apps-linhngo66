@@ -4,8 +4,7 @@
 #'
 #' @export
 #' @examples
-#' \dontrun{
-#' # Launch the dashboard
+#' if (interactive()) {
 #' yarra_view()
 #' }
 yarra_view <- function() {

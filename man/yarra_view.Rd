@@ -10,8 +10,7 @@ yarra_view()
 Launches an interactive Shiny dashboard to explore the water quality dataset
 }
 \examples{
-\dontrun{
-# Launch the dashboard
+if (interactive()) {
 yarra_view()
 }
 }
