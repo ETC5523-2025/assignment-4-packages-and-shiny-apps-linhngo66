@@ -34,7 +34,6 @@ A dataset containing water quality measurements from monitoring sites across Yar
 between 1991 and 2025
 }
 \examples{
-\dontrun{
 # Load the dataset
 data(yarra_water)
 
@@ -43,6 +42,6 @@ str(yarra_water)
 
 # Summary statistics
 summary(yarra_water)
-}
+
 }
 \keyword{datasets}

@@ -1,13 +1,18 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# yarraView
+## Overview
 
-<!-- badges: start -->
+`yarraView` provides an interactive dashboard and tools for exploring
+water quality data from the Yarra River in Victoria, Australia.
 
-<!-- badges: end -->
+The core of the package is Interactive Shiny Dashboard for visualizing
+water quality trends, including:
 
-The goal of yarraView is to …
+- **Time Series Analysis** of water quality parameters from 2020-2024
+- **Decade Comparison** between 1990s and 2020s measurements
+- **Multiple Parameters** including water temperature, turbidity,
+  salinity, and pH, etc.
 
 ## Installation
 
@@ -19,35 +24,66 @@ You can install the development version of yarraView from
 pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-linhngo66")
 ```
 
-## Example
+## Quick Start
 
-This is a basic example which shows you how to solve a common problem:
+### Launch the interactive dashboard
 
 ``` r
 library(yarraView)
-## basic example code
+yarra_view()
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+This will open the dashboard in your default browser:
+
+![](man/figures/dashboard.png)
+
+This dashboard features:
+
+**1. Time series visualization**
+
+You can explore water quality trends over time by:
+
+- Filtering by year (2020-2024 or all years)
+- Selecting different water quality parameters
+- Viewing summary statistics and record counts
+- Checking interactive tooltips for detailed information
+
+**2. Decade comparison**
+
+You can compare water quality between 1990s and 2020s through:
+
+- Side-by-side comparison of 1990s vs 2020s
+- Monthly median values with trend lines
+- Identify long-term changes in water quality
+
+### Explore the data
+
+The package includes the `yarra_water` dataset with 1,501 observations:
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+library(yarraView)
+data(yarra_water)
+head(yarra_water)
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+## Documentation
 
-You can also embed plots, for example:
+For more detailed information, see:
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+- [Function
+  Reference](https://etc5523-2025.github.io/assignment-3-creating-a-blog-linhngo66/yarraView/reference/index.html)
+- [Exploring Water Quality Changes
+  Vignette](https://etc5523-2025.github.io/assignment-3-creating-a-blog-linhngo66/yarraView/articles/exploring-yarra-water-quality.html)
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+MIT License
+
+------------------------------------------------------------------------
+
+**pkgdown site:**
+<https://etc5523-2025.github.io/assignment-3-creating-a-blog-linhngo66/yarraView/>

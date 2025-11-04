@@ -1,0 +1,40 @@
+url: https://etc5523-2025.github.io/assignment-3-creating-a-blog-linhngo66/yarraView/
+template:
+  bootstrap: 5
+  bootswatch: flatly
+
+home:
+  title: yarraView - Explore Yarra River Water Quality
+  description: >
+    Interactive dashboard and tools for visualizing and analyzing
+    water quality data from the Yarra River.
+
+navbar:
+  structure:
+    left:  [home, reference, articles, news]
+    right: [search, github]
+  components:
+    home:
+      icon: fas fa-home
+      href: index.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    articles:
+      text: Articles
+      menu:
+      - text: Exploring Water Quality Changes
+        href: articles/render-dashboard.html
+    github:
+      icon: fab fa-github
+      href: https://github.com/yourusername/yarraView
+
+reference:
+  - title: "Main Functions"
+    desc: "Interactive Shiny dashboard for exploring water quality data"
+    contents:
+    - yarra_view
+  - title: "Data"
+    desc: "Datasets included in the package"
+    contents:
+    - yarra_water

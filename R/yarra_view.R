@@ -5,6 +5,7 @@
 #' @export
 #' @examples
 #' \dontrun{
+#' # Launch the dashboard
 #' yarra_view()
 #' }
 yarra_view <- function() {

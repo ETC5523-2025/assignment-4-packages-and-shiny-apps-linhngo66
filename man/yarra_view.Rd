@@ -11,6 +11,7 @@ Launches an interactive Shiny dashboard to explore the water quality dataset
 }
 \examples{
 \dontrun{
+# Launch the dashboard
 yarra_view()
 }
 }

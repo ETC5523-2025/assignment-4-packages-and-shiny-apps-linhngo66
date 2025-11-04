@@ -22,7 +22,6 @@
 #' }
 #' @source Victorian Department of Energy, Environment, and Climate Action
 #' @examples
-#' \dontrun{
 #' # Load the dataset
 #' data(yarra_water)
 #' 
@@ -31,5 +30,5 @@
 #' 
 #' # Summary statistics
 #' summary(yarra_water)
-#' }
+#'
 "yarra_water"

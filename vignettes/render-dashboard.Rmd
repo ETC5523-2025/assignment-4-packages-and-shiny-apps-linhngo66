@@ -36,6 +36,10 @@ The easiest way to explore the water quality data is through the interactive Shi
 yarra_view()
 ```
 
+Here is how the dashboard looks like:
+
+![](dashboard.png)
+
 The dashboard provides two main views:
 
 ### Time Series Tab
