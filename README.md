@@ -20,8 +20,8 @@ You can install the development version of yarraView from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("pak")
-pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-linhngo66")
+# install.packages("devtools")
+devtools::install_github("ETC5523-2025/assignment-4-packages-and-shiny-apps-linhngo66")
 ```
 
 ## Quick Start
@@ -86,3 +86,4 @@ MIT License
 ------------------------------------------------------------------------
 
 **pkgdown site:**
+<https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-linhngo66/>

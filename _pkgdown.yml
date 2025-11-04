@@ -1,4 +1,4 @@
-url: ~
+url: https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-linhngo66/
 template:
   bootstrap: 5
   bootswatch: flatly
@@ -27,7 +27,7 @@ navbar:
         href: articles/yarraView.html
     github:
       icon: fab fa-github
-      href: https://github.com/yourusername/yarraView
+      href: https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-linhngo66
 
 reference:
   - title: "Main Functions"
@@ -38,3 +38,4 @@ reference:
     desc: "Datasets included in the package"
     contents:
     - yarra_water
+    
